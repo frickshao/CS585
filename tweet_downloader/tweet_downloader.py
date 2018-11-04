@@ -5,7 +5,16 @@ import os
 import html
 import sys
 import time
+import re
 
+
+emoji_pattern = re.compile("["
+     #   u"\U0001F600-\U0001F64F"  # emoticons
+     #   u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+     #   u"\U0001F680-\U0001F6FF"  # transport & map symbols
+     #   u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+        u"\U0001F600-\U0010ffff"
+                           "]+", flags=re.UNICODE)
 
 # Read in twitter.ini as a configuration to get API keys.
 parser = configparser.ConfigParser()
@@ -73,7 +82,8 @@ def format_tweet(tweet):
         "tweet_id" : tweet.id,
         "username": tweet.user.name,
         "mentions" : tweet.entities["user_mentions"],
-        "text": html.unescape(tweet.full_text),
+        "text": tweet.full_text,
+        "text_no_emoji": emoji_pattern.sub(r'', tweet.full_text),
         "hashtags" : tweet.entities["hashtags"],
         "links": tweet.entities["urls"],
         "favorites": tweet.favorite_count,
