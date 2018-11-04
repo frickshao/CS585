@@ -19,7 +19,7 @@ for %%i in (
 	"JoeBiden"
 	"SenatorReid"
 	"NancyPelosi"
-	"GlenBeck"
+	"GlennBeck"
 	"MittRomney"
 	"senJohnMcCain"
 	"BernieSanders"
