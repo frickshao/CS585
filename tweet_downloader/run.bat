@@ -1,5 +1,6 @@
 @echo off
-cd C:\Users\quanb\PycharmProjects\tweet_scrapper 
+REM change to directory where tweeet_downloader.py is
+cd ~\tweet_downloader 
 
 for %%i in (
 	"AzizAnsari"
