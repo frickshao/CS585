@@ -33,7 +33,7 @@ print("> Twitter API access success!")
 
 #Twitter User screenname
 try:
-	if sys.argv[0] == "tweet_downloader.py" or sys.argv[0] == "C:/Users/quanb/PycharmProjects/tweet_scrapper/tweet_downloader.py":
+	if sys.argv[0] == "tweet_downloader.py" or sys.argv[0] == "path\tweet_downloader.py":
 		screen_name = sys.argv[1]
 	else:
 		screen_name = sys.argv[0]
